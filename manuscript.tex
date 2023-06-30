@@ -20,7 +20,8 @@
 \usepackage{luacode}
 \usepackage{luatexja-ruby}
 \usepackage{luatexja-otf}
-\usepackage[noembed,deluxe,jis2004]{luatexja-preset} % 源ノ角／源ノ明朝フォント
+%\usepackage[noembed,deluxe,jis2004]{luatexja-preset} % 源ノ角／源ノ明朝フォント
+\usepackage[deluxe,jis2004]{luatexja-preset} % 源ノ角／源ノ明朝フォント
 
 % フォント設定（数式）
 \usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
@@ -45,51 +46,35 @@
 
 \usepackage{orumin}
 
-\title{記事タイトル}
-\author{著者名}
+\title{バージョン管理システム\texttt{jj}入門}
+\author{荻野　雅紀}
 \date{}
 
 \begin{document}
 \pagestyle{empty}
 \maketitle
 
-\section{執筆時のお約束}
-以下のお約束を守って書いてください。
-\begin{itemize}
-	\item 句読点は「，」「。」を使ってください
-	\item 引用符は基本的に「」を推奨します。
-	\begin{itemize}
-		\item クォーテーションを使う場合は`` ''を使ってください
-	\end{itemize}
-	\item 図を挿入するときは必ずグレースケールに変換してください
-	\begin{itemize}
-		\item 対応するフォーマットはPDF,PNGです
-	\end{itemize}
-	\item ソースコードを挿入するときは\verb|listing|環境を使ってください\footnote{\url{https://ctan.org/pkg/listings}}
-	\item 図表を入れたときは文中で参照するようにしましょう
-	\begin{itemize}
-		\item 図\ref{img:sample}はおるみん党ステッカーのデザインです
-	\end{itemize}
-\end{itemize}
-\section{サンプル}
-松尾芭蕉はその著書「奥の細道」の冒頭で次のように書き記した
+\section{はじめに}
 
-\begin{quote}
-月日は百代の過客にして、行き交う人もまた旅人なり
-\end{quote}
+バージョン管理の放棄は過去の放棄であり，過去の放棄は未来の放棄である。
 
-これは松尾芭蕉が我らが党首おるみんのように時空間を把握することができたことを示している。
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=0.8\linewidth]{images/oruminparty_sticker.png}
-	\caption{おるみん党ステッカー}
-	\label{img:sample}
-\end{figure}
+ソフトウェアのソースコードを念頭に置いたバージョン管理システムの源流はベル研究所で開発されたSCCSまで遡る。
+CVSなどの集中型バージョン管理システムはネットワーク上のサーバーに変更履歴を集積する機能を搭載し，
+インターネットを経由した国際的な共同作業をより容易なものとした。
+履歴をローカルに保持しつつ他ノードと交換できる分散型バージョン管理システムはオフラインでの操作と
+オンラインでの共同作業を両立した。
+BitKeeperの無料ライセンス終了をきっかけにLinus Torvaldsらによって開発されたGitはそのひとつである。
 
-\begin{lstlisting}
-int main(int argc, char *argv[]) {
-	printf("Hello World!\n");
-	return 0;
-}
-\end{lstlisting}
+Gitは強力かつ柔軟な履歴操作機能を提供しており，様々なワークフローに対応する。
+他方，その強力さと柔軟さは時に学習の妨げとなる。
+そこで，Game of Trees\footnote{\url{https://gameoftrees.org/}}や
+Sapling\footnote{\url{https://sapling-scm.com/}}など，Gitのリポジトリと相互運用性を確保しつつも
+特定のワークフローを志向した操作体系を提供するバージョン管理システムが誕生している。
+
+本稿はバージョン管理システム\texttt{jj}\footnote{\url{https://github.com/martinvonz/jj}}を紹介する。
+
+\newpage
+
+\section{基本操作}
+
 \end{document}
