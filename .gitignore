@@ -1,7 +1,8 @@
-*.ltjruby
-*.synctex.gz
+*.aux
 *.fdb_latexmk
 *.fls
 *.log
+*.ltjruby
 *.out
-*.aux
+*.pdf
+*.synctex.gz
