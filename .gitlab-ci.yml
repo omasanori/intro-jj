@@ -1,0 +1,18 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: "normal"
+
+stages:
+  - pretest
+  - build
+
+correcting:
+  image: akahana/redpen-cli:1.10.1
+  script:
+    - redpen -l 10 -c redpen-conf.xml manuscript.tex
+  stage: pretest
+
+typeset:
+  image: akahana/texlive-with-sourcehanfonts:2018
+  script:
+    - latexmk -lualatex manuscript
+  stage: build
